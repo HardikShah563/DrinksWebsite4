@@ -102,6 +102,30 @@
     background-color: var(--orange);
 }
 
+/* -------- Add to Cart Overlay -------- */
+.add-to-cart-overlay {
+    position: fixed;
+    opacity: 0;
+    left: -200px;
+    top: 50%;
+    width: 300px;
+    margin: auto auto;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid var(--yellow);
+    border-right: none;
+    background-color: var(--yellow);
+    color: var(--black);
+    font-weight: 600;
+    border-radius: 4px;
+    transition-duration: 300ms;
+}
+
+.add-to-cart-overlay.show {
+    left: 50px;
+    opacity: 1;
+}
+
 @media (max-width: 1000px) {
     .title h1 {
         font-size: 7vw;
