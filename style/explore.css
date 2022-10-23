@@ -1,3 +1,12 @@
+/* -------- Variable CSS --------*/
+:root {
+    --black: #000000;
+    --grey: #606060;
+    --yellow: #ee9d24;
+    --orange: #ef7e26;
+    --white: #ffffff;
+}
+
 .title {
     --size: 2px;
     letter-spacing: 2px;
@@ -7,6 +16,77 @@
     text-shadow: 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow);
 }
 
+.explore-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 1000px;
+    margin: 50px auto;
+}
+
 .drink {
-    width: 50vw;
+    width: 250px;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid var(--white);
+    border-radius: 8px;
+    background-color: var(--black);
+}
+
+.drink-img img {
+    width: 200px;
+    margin: auto auto;
+}
+
+.drink-text {
+    color: var(--white);
+    margin: 10px 0;
+}
+
+.drink-name {
+    font-size: 14px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.drink-details {
+    width: 90%;
+}
+
+.drink-price {
+    font-size: 22px;
+    text-align: center;
+}
+
+.grouping {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+
+.add-to-cart {
+    width: 100%;
+    margin: 10px 0;
+    padding: 5px 20px;
+}
+
+.go-to-cart {
+    display: flex;
+    justify-content: center;
+}
+
+.go-to-cart a {
+    background-color: var(--yellow);
+    color: var(--black);
+    border: 1px solid var(--black);
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin: 20px;
+}
+
+@media (max-width: 1000px) {
+    .explore-menu {
+        width: 95%;
+    }
 }
