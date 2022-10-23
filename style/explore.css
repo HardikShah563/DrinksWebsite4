@@ -1,0 +1,12 @@
+.title {
+    --size: 2px;
+    letter-spacing: 2px;
+    font-size: 2vw;
+    text-align: center;
+    color: var(--black);
+    text-shadow: 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow);
+}
+
+.drink {
+    width: 50vw;
+}
