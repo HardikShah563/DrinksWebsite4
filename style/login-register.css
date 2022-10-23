@@ -30,7 +30,7 @@ input, button {
     margin: 10px auto;
     width: 90%;
     height: 35px;
-    padding: 12px;
+    padding: 8px;
     border: 1px solid var(--black);
     border-radius: 5px;
 }
@@ -38,10 +38,13 @@ input, button {
 button {
     height: 45px;
     background-color: var(--yellow);
+    transition-duration: 200ms;
 }
 
 button a {
     color: var(--black);
+    font-weight: 800;
+    font-size: 18px;
 }
 
 button:hover {
