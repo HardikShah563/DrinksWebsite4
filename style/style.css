@@ -1,12 +1,9 @@
 /* -------- Variable CSS --------*/
 :root {
     --black: #000000;
-    --very-light-blue: #d6ecf7;
-    --light-blue: #91ccea;
-    --blue: #3da2da;
-    --button-blue: #5decfc;
-    --text-blue: #152c62;
-    --not-focus-text: #5a96b8;
+    --grey: #606060;
+    --yellow: #ee9d24;
+    --orange: #ef7e26;
     --white: #ffffff;
 }
 
@@ -24,6 +21,7 @@
     box-sizing: border-box;
     font-family: Poppins;
     user-select: none;
+    scroll-behavior: smooth;
 }
 
 li {
@@ -49,11 +47,18 @@ html {
 }
 
 body {
-    background: url(../img/background.jpg);
+    /* background: url(../img/background.jpg); */
     background-size: cover;
     height: 100vh;
     /* background-repeat: no-repeat; */
     /* background-position: center; */
+    background-color: #202020;
+}
+
+hr {
+    width: 60%;
+    margin: auto auto;
+    border: 0.5px solid var(--grey);
 }
 
 .box {
@@ -77,17 +82,21 @@ body {
 }
 
 .main-text {
-    margin: 100px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.margin100 {
+    margin: 100px 0;
+}
+
 .main-text h1 {
     --size: 2px;
+    letter-spacing: 2px;
     font-size: 8vw;
     color: var(--black);
-    text-shadow: 0px 0px var(--size) var(--white), 0px 0px var(--size) var(--white), 0px 0px var(--size) var(--white), 0px 0px var(--size) var(--white), 0px 0px var(--size) var(--white), 0px 0px var(--size) var(--white);
+    text-shadow: 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow);
 }
 
 .main-text p {
@@ -98,12 +107,76 @@ body {
 
 .main-img img {
     width: 40vw;
-    margin: 50px auto;
+    margin: 0px auto;
+}
+
+.main-text a {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 12px 20px;
+    color: var(--white);
+    border: 2px solid var(--yellow);
+    transition-duration: 200ms;
+}
+
+.main-text a:hover {
+    background-color: var(--yellow);
+}
+
+.about-us {
+    margin: 80px auto;
+    padding: 60px;
 }
 
 .about-img img {
     width: 60vw;
     margin: auto auto;
+}
+
+.about-text p {
+    width: 50%;
+    text-align: center;
+    margin: auto auto;
+    color: var(--white);
+}
+
+.explore-button {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.explore-button p a {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 12px 20px;
+    color: var(--white);
+    border: 2px solid var(--yellow);
+    transition-duration: 200ms;
+}
+
+.explore-button p a:hover {
+    background-color: var(--yellow);
+}
+
+footer {
+    padding: 50px 0;
+    color: var(--white);
+    text-align: center;
+}
+
+footer a {
+    color: var(--orange);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    margin: 10px;
 }
 
 @media (max-width: 600px) {
@@ -122,11 +195,26 @@ body {
     }
 
     .main-text h1 {
-        font-size: 15vw;
+        font-size: 12vw;
     }
 
     .main-img img {
-        width: 70vw;
+        width: 80vw;
+        margin: 30px auto;
+    }
+
+    .about-us {
+        margin: 100px auto;
+        padding: 0;
+    }
+
+    .about-text p {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    .about-img img {
+        width: 85vw;
     }
 }
 
@@ -137,6 +225,6 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--light-blue);
+    background-color: var(--yellow);
     border-radius: 10px;
 }
