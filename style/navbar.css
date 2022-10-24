@@ -1,11 +1,9 @@
 /* variable css */
 :root {
     --black: #000000;
-    --grey: #858585;
-    --purple: #622a95;
-    --dark-lavender: #9471f1;
-    --lavander: #c8b3f6;
-    --light-lavender: #f5f1ff;
+    --grey: #606060;
+    --yellow: #ee9d24;
+    --orange: #ef7e26;
     --white: #ffffff;
 }
 
@@ -29,6 +27,10 @@ nav {
 .logo {
     font-size: 32px;
     font-weight: 600;
+    color: var(--yellow);
+}
+
+.white {
     color: var(--white);
 }
 
