@@ -39,29 +39,41 @@
 }
 
 .input-form {
-    width: 300px;
+    width: 400px;
     margin: 60px auto;
+    padding: 30px 10px 15px 10px;
+    border: 1px solid var(--yellow);
+    border-radius: 20px;
+}
+
+.input-form h1 {
+    margin: 0 0 20px 0;
+    text-align: center;
+    color: var(--yellow);
+}
+
+.input-form p {
+    font-size: 10px;
+    text-align: center;
+    color: var(--grey);
 }
 
 input, button {
     margin: 10px auto;
-    width: 90%;
+    width: 98%;
     height: 35px;
     padding: 8px;
     border: 1px solid var(--black);
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
 button {
     height: 45px;
     background-color: var(--yellow);
     transition-duration: all 200ms;
-}
-
-button a {
     color: var(--black);
     font-weight: 800;
-    font-size: 18px;
+    font-size: 14px;
 }
 
 button:hover {
@@ -74,8 +86,18 @@ button:hover {
     color: var(--white);
 }
 
-
-
 .grouping {
     display: flex;
+    justify-content: space-between;
 }
+
+.grouping input {
+    margin: 5px 5px;
+}
+
+@media (max-width: 450px) {
+    .input-form {
+        width: 95%;
+    }
+}
+

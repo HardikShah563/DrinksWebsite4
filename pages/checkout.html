@@ -26,13 +26,13 @@
                     <i class="fa-solid fa-bars-staggered"></i>
                 </div>
                 <div class="nav-links">
-                    <li><a href="../index.html#main">Home <hr>
+                    <li><a href="../index.html">Home <hr>
                     </a> </li>
                 <li><a href="../index.html#about-us">About <hr>
                     </a> </li>
                 <li><a href="./explore.html">Explore <hr>
                     </a> </li>
-                <li><a href="../index.html#contact">Contact <hr>
+                <li><a href="../index.html#contact-us">Contact <hr>
                     </a> </li>
                 <li><a href="./login.html"><i class="fa-solid fa-user"></i> <hr>
                     </a> </li>
@@ -48,15 +48,62 @@
 
         <section class="input-form">
             <form>
+                <h1>Personal Details</h1>
                 <div class="grouping">
-                    <input type="text" name="FirstName" id="FirstName" placeholder="First Name">
-                    <input type="text" name="LastName" id="LastName" placeholder="Last Name">
+                    <input type="text" name="FirstName" id="FirstName" placeholder="First Name" required>
+                    <input type="text" name="LastName" id="LastName" placeholder="Last Name" required>
                 </div>
+                <p>* You can login through phone number or email address</p>
+                <input type="number" name="phnumber" id="phnumber" placeholder="Phone Number">
                 <input type="email" name="email" id="email" placeholder="Email / Username">
-                <input type="password" name="password" id="password" placeholder="Password">
-                <button><a class="btn" href="./exlore.html">Submit</a></button>
+                <div class="grouping">
+                    <input type="password" name="password" id="password" placeholder="Create Password" required>
+                    <input type="password" name="password" id="password" placeholder="Retype Password" required>
+                </div>
+                <button>Save Changes</button>
             </form>
-            <p>Don't have an account?&nbsp;&nbsp;<a href="./register.html">Register here</a></p>
+        </section>
+
+        <section class="input-form">
+            <form>
+                <h1>Billing & Shipping Address</h1>
+                <input type="text" placeholder="House no. / Building Name" required>
+                    <input type="text" placeholder="Road Name / Area / Colony" required>
+                    <div class="grouping">
+                        <input type="text" placeholder="Pincode" required>
+                        <input type="text" placeholder="City" required>
+                        <input type="text" placeholder="State" required>
+                    </div>
+                    <input type="text" placeholder="Nearby Location (optional)">
+                    <button>Save Changes</button>
+            </form>
+        </section>
+
+        <section class="input-form">
+            <form>
+                <h1>Billing & Shipping Address</h1>
+                <div class="grouping">
+                    <input type="text" name="card-holder" id="card-holder" placeholder="Card Holder" required>
+                    <input type="date" name="date" id="date" required>
+                </div>
+                <div class="grouping">
+                    <input type="number" name="card-number" id="card-number" placeholder="Card Number" required>
+                    <input type="number" name="CVV" id="CVV" placeholder="CVV" required>
+                </div>
+                <button>Proceed with payment</button>
+            </form>
+        </section>
+
+        <hr>
+
+        <section class="footer">
+            <footer>
+                <p>&copy; Copyrights reserved | Drinksify 2022</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms and Conditions</a>
+                </div>
+            </footer>
         </section>
     </div>
 </body>
