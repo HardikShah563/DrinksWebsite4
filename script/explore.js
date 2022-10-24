@@ -4,7 +4,7 @@ function addToCartClick() {
     addTocart.forEach(addtocart => {
         addtocart.addEventListener("click", () => {
             addTocartOverlay.classList.add("show");
-            setTimeout(fadeOut, 3000);
+            setTimeout(fadeOut, 2000);
         });
     });
 }
