@@ -8,7 +8,7 @@
     <!-- Link Style Sheet -->
     <link rel="stylesheet" href="./../style/style.css">
     <link rel="stylesheet" href="./../style/navbar.css">
-    <link rel="stylesheet" href="./../style/login-register.css">
+    <link rel="stylesheet" href="./../style/checkout.css">
     <!-- Link javascript -->
     <script src="./../script/app.js" defer></script>
     <!-- Fontawesome Icons -->
@@ -42,15 +42,19 @@
             </nav>
         </section>
         
-        <section class="heading">
-            <h1>Login</h1>
-        </section>
+        <div class="main-text">
+            <h1>Checkout form</h1>
+        </div>
 
         <section class="input-form">
             <form>
+                <div class="grouping">
+                    <input type="text" name="FirstName" id="FirstName" placeholder="First Name">
+                    <input type="text" name="LastName" id="LastName" placeholder="Last Name">
+                </div>
                 <input type="email" name="email" id="email" placeholder="Email / Username">
                 <input type="password" name="password" id="password" placeholder="Password">
-                <button><a href="./exlore.html">Submit</a></button>
+                <button><a class="btn" href="./exlore.html">Submit</a></button>
             </form>
             <p>Don't have an account?&nbsp;&nbsp;<a href="./register.html">Register here</a></p>
         </section>

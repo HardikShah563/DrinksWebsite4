@@ -116,11 +116,14 @@ hr {
     padding: 12px 20px;
     color: var(--white);
     border: 2px solid var(--yellow);
+    border-radius: 10px;
     transition-duration: 200ms;
 }
 
 .main-text a:hover {
-    background-color: var(--yellow);
+    border: 2px solid var(--orange);
+    background-color: var(--black);
+    transform: scale(1.1);
 }
 
 .about-us {
@@ -152,11 +155,14 @@ hr {
     padding: 12px 20px;
     color: var(--white);
     border: 2px solid var(--yellow);
+    border-radius: 10px;
     transition-duration: 200ms;
 }
 
 .explore-button p a:hover {
-    background-color: var(--yellow);
+    border: 2px solid var(--orange);
+    background-color: var(--black);
+    transform: scale(1.1);
 }
 
 footer {
