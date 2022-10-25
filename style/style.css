@@ -81,7 +81,7 @@ hr {
     
 }
 
-.main-text {
+.main-text, .main-text-pages {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -105,6 +105,14 @@ hr {
     color: var(--white);
 }
 
+.main-text-pages {
+    --size: 2px;
+    letter-spacing: 2px;
+    font-size: 4vw;
+    color: var(--black);
+    text-shadow: 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow);
+}
+
 .main-img img {
     width: 40vw;
     margin: 0px auto;
@@ -124,11 +132,6 @@ hr {
     border: 2px solid var(--orange);
     background-color: var(--black);
     transform: scale(1.1);
-}
-
-.about-us {
-    margin: 80px auto;
-    padding: 60px;
 }
 
 .about-img img {
@@ -165,14 +168,9 @@ hr {
     transform: scale(1.1);
 }
 
-.contact-us {
-    margin: 80px 0;
-    padding: 60px 0;
-}
-
 .input-form {
     width: 320px;
-    margin: 60px auto;
+    margin: 30px auto;
 }
 
 input, textarea, button {
@@ -206,6 +204,7 @@ button:hover {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin: 30px 0;
 }
 
 .contact-links i {
@@ -260,6 +259,10 @@ footer a {
         font-size: 12vw;
     }
 
+    .main-text-pages {
+        font-size: 8vw;
+    }
+
     .main-img img {
         width: 80vw;
         margin: 30px auto;
@@ -288,6 +291,14 @@ footer a {
     input, textarea, button {
         width: 100%;
         margin: 10px 0;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+
+    .footer-links a {
+        font-size: 10px;
     }
 }
 
