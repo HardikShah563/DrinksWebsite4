@@ -173,8 +173,12 @@ hr {
     margin: 30px auto;
 }
 
+.input-form button {
+    width: 90%;
+    margin-left: 10px;
+}
+
 input, textarea, button {
-    margin: 10px 10px;
     width: 90%;
     resize: none;
     padding: 8px;
@@ -183,6 +187,10 @@ input, textarea, button {
     background-color: var(--black);
     border: 1px solid var(--yellow);
     color: var(--white);
+}
+
+input, textarea {
+    margin: 10px 10px;
 }
 
 input, button {
@@ -293,6 +301,11 @@ footer a {
         margin: 10px 0;
     }
 
+    .input-form button {
+        width: 100%;
+        margin-left: 0px;
+    }
+
     footer p {
         font-size: 12px;
     }
@@ -311,4 +324,435 @@ footer a {
 ::-webkit-scrollbar-thumb {
     background-color: var(--yellow);
     border-radius: 10px;
+}
+
+
+/* ========== ========= Navbar CSS ======== ======== */
+
+/* ---- navigation bar css ---- */
+.nav {
+    position: sticky;
+    top: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 90px;
+    width: 100%;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    opacity: 0.9;
+}
+
+/* ---- navigation bar links ---- */
+.logo {
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--yellow);
+}
+
+.white {
+    color: var(--white);
+}
+
+.nav-lines i {
+    color: var(--white);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    width: 30%;
+    margin: 0 20px;
+}
+
+.nav-links li {
+    display: block;
+    margin: auto 10px;
+    color: var(--grey);
+    transition-duration: 200ms;
+}
+
+.nav-links li:hover {
+    transform: scale(1.2);
+    font-weight: 800;
+}
+
+.nav-links li a {
+    color: var(--white);
+    font-weight: 500;
+    font-size: 14px;
+    transition: 200ms;
+}
+
+/* navigation bar lines for collapsable nav bar */
+.nav-lines {
+    display: none;
+    margin: auto 0;
+}
+
+a hr {
+    width: 0%;
+    border: 0.5px solid transparent;
+    transition: 300ms ease-in-out;
+}
+
+.nav-links li a:hover > hr {
+    width: 80%;
+    border: 0.5px solid var(--white);
+}
+
+
+
+@media (max-width: 900px) {
+    nav {
+        margin: 0 0;
+        padding: 20px 30px;
+        justify-content: space-between;
+        background-color: #00000011;
+    }
+
+    .logo {
+        display: flex;
+    }
+
+    .nav-lines {
+        display: flex;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        position: absolute;
+        z-index: 3;
+        background-color: #101010;
+        margin: 0 0;
+        display: block;
+        top: 70px;
+        left: 0;
+        right: 0px;
+        width: 100%;
+        height: 0vw;
+        opacity: 0.95;
+        transform: 200ms;
+        overflow: hidden;
+        transition: 200ms;
+        border-bottom-left-radius: 60px;
+        border-bottom-right-radius: 60px;
+    }
+
+    .nav-links.active {
+        height: 70vh;
+        padding: 20px;
+    }
+
+    .nav-links li {
+        justify-content: center;
+        padding: 20px 0;
+        text-align: center;
+    }
+}
+
+
+/* ========== ========= All pages CSS ======== ======== */
+
+.all-pages .main-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.all-pages .main-text h1 {
+    --size: 2px;
+    letter-spacing: 2px;
+    font-size: 5vw;
+    color: var(--black);
+    text-shadow: 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow);
+}
+
+
+/* ========== ========= Login + Register Pages CSS ======== ======== */
+
+.login-text h1 {
+    --size: 2px;
+    letter-spacing: 2px;
+    font-size: 5vw;
+    color: var(--black);
+    text-shadow: 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow);
+}
+
+.login-page .input-form {
+    width: 320px;
+    margin: 60px auto;
+}
+
+.login-page input, .login-page button {
+    margin: 10px auto;
+    width: 90%;
+    height: 45px;
+    padding: 8px;
+    border: 1px solid var(--black);
+    border-radius: 5px;
+    background-color: var(--black);
+    border: 1px solid var(--yellow);
+    color: var(--white);
+}
+
+.login-page button {
+    height: 45px;
+    background-color: var(--yellow);
+    transition-duration: 200ms;
+}
+
+.login-page button a {
+    color: var(--black);
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.login-page button:hover {
+    background-color: var(--orange);
+}
+
+.login-page .input-form p {
+    display: flex;
+    justify-content: center;
+    color: var(--white);
+    font-size: 12px;
+}
+
+.login-page .input-form p a {
+    color: var(--yellow);
+}
+
+@media (max-width: 900px) {
+    .login-text h1 {
+        font-size: 10vw;
+    }
+}
+
+@media (max-width: 350px) {
+    .login-text h1 {
+        font-size: 20vw;
+    }
+
+    .login-page .input-form {
+        width: 90%;
+    }
+
+    .login-page .input-form p, .login-page .input-form p a {
+        font-size: 8px;
+    }
+
+    .login-page input {
+        margin: 20px auto;
+    }
+}
+
+
+/* ========== ========= Explore + Cart Page CSS ======== ======== */
+
+.explore-cart-page .title {
+    --size: 2px;
+    letter-spacing: 2px;
+    font-size: 2vw;
+    text-align: center;
+    color: var(--black);
+    text-shadow: 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow);
+}
+
+.explore-cart-page .explore-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 1000px;
+    margin: 50px auto;
+}
+
+.explore-cart-page .drink {
+    width: 250px;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid var(--white);
+    border-radius: 8px;
+    background-color: var(--black);
+}
+
+.explore-cart-page .drink-img img {
+    width: 200px;
+    margin: auto auto;
+}
+
+.explore-cart-page .drink-text {
+    color: var(--white);
+    margin: 10px 0;
+}
+
+.explore-cart-page .drink-name {
+    font-size: 14px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.explore-cart-page .drink-details {
+    width: 90%;
+}
+
+.explore-cart-page .drink-price {
+    font-size: 22px;
+    text-align: center;
+}
+
+.explore-cart-page .grouping {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+
+.explore-cart-page .add-to-cart {
+    width: 100%;
+    margin: 10px 0;
+    padding: 5px 20px;
+    background-color: var(--yellow);
+    border: 1px solid var(--yellow);
+    border-radius: 4px;
+    transition-duration: 200ms;
+}
+
+.explore-cart-page .add-to-cart:hover {
+    color: var(--white);
+    background-color: var(--black);
+    border: 1px solid var(--yellow);
+}
+
+.explore-cart-page .go-to-cart {
+    display: flex;
+    justify-content: center;
+    margin: 80px 0;
+}
+
+.explore-cart-page .go-to-cart a {
+    background-color: var(--yellow);
+    color: var(--black);
+    font-weight: 700;
+    border: 1px solid var(--black);
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin: 20px;
+    transition-duration: 200ms;
+}
+
+.explore-cart-page .go-to-cart a:hover {
+    background-color: var(--orange);
+}
+
+/* -------- Add to Cart Overlay -------- */
+.explore-cart-page .add-to-cart-overlay {
+    position: fixed;
+    opacity: 0;
+    left: -200px;
+    top: 50%;
+    width: 300px;
+    margin: auto auto;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid var(--yellow);
+    border-right: none;
+    background-color: var(--yellow);
+    color: var(--black);
+    font-weight: 600;
+    border-radius: 4px;
+    transition-duration: 300ms;
+}
+
+.explore-cart-page .add-to-cart-overlay.show {
+    left: 50px;
+    opacity: 1;
+}
+
+@media (max-width: 1000px) {
+    .explore-cart-page .title h1 {
+        font-size: 7vw;
+    }
+
+    .explore-cart-page .explore-menu {
+        width: 95%;
+    }
+}
+
+@media (max-width: 600px) {
+    .explore-cart-page .title h1 {
+        margin: 20px 0;
+        font-size: 12vw;
+    }
+}
+
+
+
+/* ========== ========= Checkout Page CSS ======== ======== */
+
+
+.checkout-page .input-form {
+    width: 400px;
+    margin: 60px auto;
+    padding: 30px 10px 15px 10px;
+    border: 1px solid var(--yellow);
+    border-radius: 20px;
+}
+
+.checkout-page .input-form h1 {
+    margin: 0 0 20px 0;
+    text-align: center;
+    color: var(--yellow);
+}
+
+.checkout-page .input-form p {
+    font-size: 10px;
+    text-align: center;
+    color: var(--grey);
+}
+
+.checkout-page input, button {
+    margin: 10px auto;
+    width: 98%;
+    height: 35px;
+    padding: 8px;
+    border: 1px solid var(--black);
+    border-radius: 8px;
+}
+
+.checkout-page button {
+    height: 45px;
+    background-color: var(--yellow);
+    transition-duration: all 200ms;
+    color: var(--black);
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.checkout-page button:hover {
+    background-color: var(--black);
+    border: 1px solid var(--orange);
+    color: var(--white);
+}
+
+.checkout-page .btn:hover {
+    color: var(--white);
+}
+
+.checkout-page .grouping {
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkout-page .grouping input {
+    margin: 5px 5px;
+}
+
+@media (max-width: 450px) {
+    .checkout-page .input-form {
+        width: 95%;
+    }
 }
