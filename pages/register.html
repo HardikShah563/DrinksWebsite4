@@ -61,18 +61,22 @@
         <section class="main-text login-text">
             <h1>Register</h1>
         </section>
-
+        <div class="submit-message">
+            <p><i class="fa-solid fa-circle-check"></i> New Account created successfully</p>
+        </div>
+        
         <section class="input-form">
-            <form>
+            <form action="index.php" method="post">
                 <input type="text" name="name" id="name" placeholder="Name">
                 <input type="number" name="phnumber" id="phnumber" placeholder="Phone Number">
                 <input type="email" name="email" id="email" placeholder="Email / Username">
                 <input type="password" name="password" id="password" placeholder="Password">
-                <button><a href="./explore.html">Register</a></button>
+                <button><a href="../php/index.php">Register</a></button>
             </form>
             <p>Already have an account?&nbsp;&nbsp;<a href="./login.html">Login here</a></p>
         </section>
     </div>
 </body>
+<!-- INSERT INTO `register` (`cust_id`, `name`, `ph_no`, `email`, `password`) VALUES ('1', 'Hardik Shah', '9321012106', 'hardikts@gmail.com', 'Hardik563'); -->
 
 </html>

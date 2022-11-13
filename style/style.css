@@ -5,6 +5,7 @@
     --yellow: #ee9d24;
     --orange: #ef7e26;
     --white: #ffffff;
+    --green: #0c770c;
 }
 
 /* -------- Font face import -------- */
@@ -482,9 +483,33 @@ a hr {
     text-shadow: 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow), 0px 0px var(--size) var(--yellow);
 }
 
+.submit-message {
+    display: flex;
+    justify-content: center;
+    width: 290px;
+    margin: 50px auto 0px auto;
+    padding: 8px;
+    background-color: var(--black);
+    color: var(--green);
+    font-size: 12px;
+    border: 1px solid var(--yellow);
+    border-radius: 8px;
+}
+
+.submit-message p {
+    display: flex;
+    align-items: center;
+}
+
+.submit-message i {
+    font-size: 18px;
+    padding: 0 5px;
+    color: var(--green);
+}
+
 .login-page .input-form {
     width: 320px;
-    margin: 60px auto;
+    margin: 20px auto;
 }
 
 .login-page input, .login-page button {
