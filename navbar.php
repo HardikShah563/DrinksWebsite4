@@ -10,19 +10,19 @@
             <li><a href="#main">Home
                     <hr>
                 </a> </li>
-            <li><a href="./pages/about-us.html">About
+            <li><a href="/drinksify/about-us.php">About
                     <hr>
                 </a> </li>
-            <li><a href="./explore.php">Explore
+            <li><a href="/drinksify/explore.php">Explore
                     <hr>
                 </a> </li>
-            <li><a href="./pages/contact-us.html">Contact
+            <li><a href="/drinksify/contact-us.php">Contact
                     <hr>
                 </a> </li>
-            <li><a href="./pages/login.html"><i class="fa-solid fa-user"></i>
+            <li><a href="/drinksify/login.php"><i class="fa-solid fa-user"></i>
                     <hr>
                 </a> </li>
-            <li class="contact"><a href="./pages/cart.html"><i class="fa-solid fa-bag-shopping"></i>
+            <li class="contact"><a href="/drinksify/cart.php"><i class="fa-solid fa-bag-shopping"></i>
                     <hr>
                 </a> </li>
         </div>

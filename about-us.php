@@ -2,16 +2,8 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drinksify</title>
-    <!-- Link Style Sheet -->
-    <link rel="stylesheet" href="../style/style.css">
-    <!-- Link Script -->
-    <script src="../script/app.js" defer></script>
-    <!-- Fontawesome Icons -->
-    <script src="https://kit.fontawesome.com/6d232ec003.js" crossorigin="anonymous"></script>
+    <?php include 'head-links.php' ?>
+    <title>Drinksify | About Us</title>
 </head>
 
 <body>
@@ -29,7 +21,7 @@
                     ducimus voluptates vero atque eius quis. Autem, laborum.</p>
             </div>
             <div class="about-img">
-                <img src="../img/four-combo.png" alt="Four Combo Img">
+                <img src="./img/four-combo.png" alt="Four Combo Img">
             </div>
         </section>
 

@@ -15,7 +15,7 @@
             <div class="main-text margin100">
                 <h1>DRINKSIFY</h1>
                 <p>Lorem ipsum dolor sit amet.</p>
-                <p><a href="./pages/explore.html">Explore</a></p>
+                <p><a href="/drinksify/explore.php">Explore</a></p>
             </div>
             <div class="main-img">
                 <img src="./img/golden-main.png" alt="Main Img">

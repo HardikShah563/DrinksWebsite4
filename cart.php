@@ -42,10 +42,8 @@
         </section>
 
         <div class="go-to-cart">
-            <a href="./checkout.html">Checkout</a>
+            <a href="/drinksify/checkout.php">Checkout</a>
         </div>
-
-        <hr>
 
         <?php include 'footer.php' ?>
 
