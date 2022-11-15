@@ -21,7 +21,7 @@
             <form>
                 <input type="email" name="email" id="email" placeholder="Email / Username">
                 <input type="password" name="password" id="password" placeholder="Password">
-                <button><a href="/drinksify/explore.php">Submit</a></button>
+                <button>Login</button>
             </form>
             <p>Don't have an account?&nbsp;&nbsp;<a href="/drinksify/register.php">Register here</a></p>
         </section>
