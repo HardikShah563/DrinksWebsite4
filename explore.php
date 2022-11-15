@@ -18,7 +18,7 @@
         <section class="explore-menu">
             <div class="drink">
                 <div class="drink-img">
-                    <img src="../img/drink1.png" alt="drink1">
+                    <img src="./img/drink1.png" alt="drink1">
                 </div>
                 <div class="drink-text">
                     <h1 class="drink-name">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h1>
@@ -29,7 +29,7 @@
 
             <div class="drink">
                 <div class="drink-img">
-                    <img src="../img/drink2.png" alt="drink1">
+                    <img src="./img/drink2.png" alt="drink1">
                 </div>
                 <div class="drink-text">
                     <h1 class="drink-name">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h1>
@@ -40,7 +40,7 @@
 
             <div class="drink">
                 <div class="drink-img">
-                    <img src="../img/drink3.png" alt="drink1">
+                    <img src="./img/drink3.png" alt="drink1">
                 </div>
                 <div class="drink-text">
                     <h1 class="drink-name">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h1>
@@ -51,7 +51,7 @@
 
             <div class="drink">
                 <div class="drink-img">
-                    <img src="../img/drink4.png" alt="drink1">
+                    <img src="./img/drink4.png" alt="drink1">
                 </div>
                 <div class="drink-text">
                     <h1 class="drink-name">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h1>
@@ -62,7 +62,7 @@
 
             <div class="drink">
                 <div class="drink-img">
-                    <img src="../img/drink5.png" alt="drink1">
+                    <img src="./img/drink5.png" alt="drink1">
                 </div>
                 <div class="drink-text">
                     <h1 class="drink-name">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h1>
@@ -73,7 +73,7 @@
 
             <div class="drink">
                 <div class="drink-img">
-                    <img src="../img/drink6.png" alt="drink1">
+                    <img src="./img/drink6.png" alt="drink1">
                 </div>
                 <div class="drink-text">
                     <h1 class="drink-name">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h1>
