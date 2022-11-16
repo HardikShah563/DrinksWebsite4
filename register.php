@@ -6,39 +6,34 @@
     <title>Drinksify | Register</title>
     <link rel="stylesheet" href="/drinksify/style.css">
 </head>
-<body>
+<body style="color: #fff;">
     <!-- Everything inside the file will be contained inside the box to get that effect -->
     <div class="box login-page">
         <?php include 'navbar.php' ?>
-        
-        <?php 
+            <?php 
+            $name = ""; 
+            $phno = 0;
+            $email = "";
+            $password = "";
+            $name = $_POST["name"];
+            $phno = $_POST["phnumber"];
+            $email = $_POST["email"];
+            $password = $_POST["password"];
+            $confirm = register($name, $phno, $email, $password);
 
-        if(isset($_POST['register'])) {
-            $data = $_POST;
-            $user_exist = email_exist($data['email']);
-            if($user_exist) {
+            if($confirm) {
                 $response = [
-                    'type' => 'error',
-                    'message' => 'This email address already exist!',
+                    'type' => 'success',
+                    'message' => 'Registration Successful! You can log in',
                 ];
             }
             else {
-                $user = signup($data);
-                if($user) {
-                    $response = [
-                        'type' => 'success',
-                        'message' => 'Registration Successful! You can log in',
-                    ];
-                }
-                else {
-                    $response = [
-                        'type' => 'error',
-                        'message' => 'Registration failed! Try again',
-                    ];
-                }
+                $response = [
+                    'type' => 'error',
+                    'message' => 'Registration failed! Try again',
+                ];
             }
-        }
-        
+            
         ?>
 
         <section class="main-text login-text">
