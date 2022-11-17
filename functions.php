@@ -32,20 +32,9 @@ function register($name, $phno, $email, $password) {
     $sql = "INSERT INTO `users` (`name`, `phno`, `email`, `password`) VALUES ('$name', '$phno', '$email', '$password')";
     // Push Query to database
     $check = mysqli_query($db, $sql);
-    if($check) {
-        echo "Success";
-    }
-    else {
+    if(!$check)
         echo "Failure";
-    }
-    // $sql = "insert intp users(name, phno, email, password) values(?, ?, ?, ?)";
-    // $stmt = $db->prepare($sql);
-    // $stmt -> blind_param("ssss", $name, $phno, $email, $password);
-    // echo $name . $phno . $email . $password;
-    // if($stmt->execute()) {
-    //     return 1;
-    // }
-    // return 0;
+    
 }
 // function email_exist($email) {
 //     global $db;
