@@ -34,6 +34,25 @@ function register($name, $phno, $email, $password) {
     $check = mysqli_query($db, $sql);
     if(!$check)
         echo "Failure";
+}
+
+function emailCheck($email) {
+    global $db;
+    $sql = "select * from users where (email='$email');";
+    $checkEmail = mysqli_query($db, $sql);
+    if(mysqli_num_rows($checkEmail) > 0) {
+        $row = mysqli_fetch_assoc($checkEmail);
+        if($email == isset($row['email'])) {
+            echo "email already there";
+            return 1;
+        }
+        else {
+            return 0;
+        }
+    }
+}
+
+function login($email, $password) {
     
 }
 // function email_exist($email) {

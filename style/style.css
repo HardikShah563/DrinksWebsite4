@@ -545,7 +545,7 @@ a hr {
     justify-content: center;
     color: var(--white);
     font-size: 12px;
-    padding-bottom: 100vh;
+    /* padding-bottom: 100vh; */
 }
 
 .login-page .input-form p a {

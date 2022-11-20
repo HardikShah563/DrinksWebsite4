@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/drinksify/style.css">
 </head>
 
-<body style="color: transparent;">
+<body style="color: white;">
     <div class="box login-page">
         <?php include 'navbar.php' ?>
 
@@ -49,33 +49,59 @@
         </section>
 
         <?php
-        // $name = "";
-        // $phno = 0;
-        // $email = "";
-        // $password = "";
-        if ($name != "" or $phno != "" or $email != "" or $password != "") {
+
+        $name = "NULL";
+        $phno = 0;
+        $email = "NULL";
+        $password = "NULL";
+        // $name = $_POST["name"];
+        // $phno = $_POST["phnumber"];
+        // $email = $_POST["email"];
+        // $password = $_POST["password"];
+        // $confirm = register($name, $phno, $email, $password);
+        // unset($_POST);
+
+        if ($_POST) {
             $name = $_POST["name"];
             $phno = $_POST["phnumber"];
             $email = $_POST["email"];
             $password = $_POST["password"];
-            $confirm = register($name, $phno, $email, $password);
 
-            if ($confirm) {
-                $response = [
-                    'type' => 'success',
-                    'message' => 'Registration Successful! You can log in',
-                ];
-            } else {
+            if (emailCheck($email)) {
                 $response = [
                     'type' => 'error',
-                    'message' => 'Registration failed! Try again',
+                    'message' => 'Email already exists',
                 ];
             }
+            else {
+                $confirm = register($name, $phno, $email, $password);
+                if ($confirm) {
+                    $response = [
+                        'type' => 'success',
+                        'message' => 'Registration Successful! You can log in',
+                    ];
+                } else {
+                    $response = [
+                        'type' => 'error',
+                        'message' => 'Registration failed! Try again',
+                    ];
+                }
+            }
+
+            unset($_POST);
+            $_POST = array();
 
             $name = "";
             $phno = 0;
             $email = "";
             $password = "";
+            $_POST['name'] = "NULL";
+            $_POST['phnumber'] = "0";
+            $_POST['email'] = "NULL";
+            $_POST['password'] = "NULL";
+
+            // Redirect to another page
+            header('location: login.php');
         }
 
         ?>
