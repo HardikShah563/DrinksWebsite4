@@ -19,14 +19,12 @@
 
         <section class="input-form" id="input-form">
             <form action="?" method="post">
-                <div class="submit-message" style="color: #0c770c; display: none;">
-                    <p><i style="color: #0c770c;" class="fa-solid fa-circle-check"></i> Registration successful! You can
-                        log in</p>
+            <?php if (isset($response)) { ?>
+                <div class="submit-message <?= $response['type'] ?>">
+                    <p><?= $response['message'] ?></p>
                 </div>
-                <div class="submit-message" style="color: #ff6d6d; display: none;">
-                    <p><i style="color: #ff6d6d;" class="fa-solid fa-circle-xmark"></i> Registration failed! Try again
-                    </p>
-                </div>
+            <?php } ?>
+            
                 <input type="text" name="name" id="name" placeholder="Name" required>
                 <input type="number" name="phnumber" id="phnumber" placeholder="Phone Number" required>
                 <input type="email" name="email" id="email" placeholder="Email / Username" required>
@@ -82,7 +80,7 @@
                     ];
                 } else {
                     $response = [
-                        'type' => 'error',
+                        'type' => 'failure',
                         'message' => 'Registration failed! Try again',
                     ];
                 }
@@ -100,7 +98,7 @@
             $_POST['email'] = "NULL";
             $_POST['password'] = "NULL";
 
-            // Redirect to another page
+            //Redirect to another page
             header('location: login.php');
         }
 

@@ -488,12 +488,18 @@ a hr {
     display: flex;
     justify-content: center;
     width: 290px;
-    margin: 50px auto 0px auto;
+    margin: 10px auto 0px auto;
     padding: 8px;
-    background-color: var(--black);
     font-size: 12px;
-    border: 1px solid var(--yellow);
-    border-radius: 8px;
+    color: var(--white);
+}
+
+.success {
+    color: var(--green);
+}
+
+.failure {
+    color: var(--red);
 }
 
 .submit-message p {
@@ -545,7 +551,6 @@ a hr {
     justify-content: center;
     color: var(--white);
     font-size: 12px;
-    /* padding-bottom: 100vh; */
 }
 
 .login-page .input-form p a {

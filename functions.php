@@ -53,19 +53,18 @@ function emailCheck($email) {
 }
 
 function login($email, $password) {
-    
+    global $db;
+    $hashedPassword = md5($password);
+    $sql = "select * from users where (email='$email' and password='$hashedPassword')";
+    $sql = "SELECT email, password FROM users WHERE email = '$email' and password = md5('$password')";
+    $ifMatch = mysqli_query($db, $sql);
+    if(mysqli_num_rows($ifMatch) > 0) {
+        $row = mysqli_fetch_assoc($ifMatch);
+        if($email == isset($row['email']) and $hashedPassword == isset($row['password'])) {
+            return 1;
+        }
+        return 0;
+    }
 }
-// function email_exist($email) {
-//     global $db;
-//     $sql = "select * from users where email = ?";
-//     // $stmt = $db -> stmt_init();
-//     $stmt->blind_param("s", $email);
-//     $stmt->execute();
-//     $result = $stmt->get_result();
-//     if(mysqli_num_rows($result)) {
-//         return 1;
-//     }
-//     return 0;
-// }
 
 ?>
