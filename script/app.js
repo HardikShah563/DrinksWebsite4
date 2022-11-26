@@ -22,12 +22,12 @@ function fadeOut() {
 
 setInterval(addToCartClick(), 1);
 
-var inputForm = document.getElementById("input-form");
-var name = document.getElementById("name");
-var phno = document.getElementById("phnumber");
-var email = document.getElementById("email");
-var pass = document.getElementById("password");
+// var inputForm = document.getElementById("input-form");
+// var name = document.getElementById("name");
+// var phno = document.getElementById("phnumber");
+// var email = document.getElementById("email");
+// var pass = document.getElementById("password");
 
-function submitForm() {
-    document.inputForm.reset();
-}
+// function submitForm() {
+//     document.inputForm.reset();
+// }
