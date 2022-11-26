@@ -1,4 +1,5 @@
 <?php include 'functions.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,72 +17,27 @@
             <h1>Explore the Energy!</h1>
         </div>
 
+        <?php $drinks = get_drinks();
+        if (mysqli_num_rows($drinks)) { ?>
         <section class="explore-menu">
+            <?php foreach ($drinks as $drink) { ?>
             <div class="drink">
                 <div class="drink-img">
-                    <img src="./img/drink1.png" alt="drink1">
+                    <img src="<?= $drink['image'] ?>" alt="drink image" />
                 </div>
                 <div class="drink-text">
-                    <h1 class="drink-name">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h1>
-                    <h1 class="drink-price">€99</h1>
-                    <button class="add-to-cart">Add to Cart</button>
+                    <p class="drink-name"><?= $drink['name'] ?></p>
+                    <h3 class="drink-cost" style="text-align: center;">£<?= $drink['price'] ?></h3>
+                </div>
+                <div class="add-to-basket">
+                    <form action="add-to-cart.php" method="POST">
+                        <input type="hidden" name="d_id" value="<?= $drink['d_id'] ?>">
+                        <button type="submit" name="add-to-cart" class="add-to-cart"> Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+                    </form>
                 </div>
             </div>
-
-            <div class="drink">
-                <div class="drink-img">
-                    <img src="./img/drink2.png" alt="drink1">
-                </div>
-                <div class="drink-text">
-                    <h1 class="drink-name">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h1>
-                    <h1 class="drink-price">€99</h1>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="drink">
-                <div class="drink-img">
-                    <img src="./img/drink3.png" alt="drink1">
-                </div>
-                <div class="drink-text">
-                    <h1 class="drink-name">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h1>
-                    <h1 class="drink-price">€99</h1>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="drink">
-                <div class="drink-img">
-                    <img src="./img/drink4.png" alt="drink1">
-                </div>
-                <div class="drink-text">
-                    <h1 class="drink-name">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h1>
-                    <h1 class="drink-price">€99</h1>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="drink">
-                <div class="drink-img">
-                    <img src="./img/drink5.png" alt="drink1">
-                </div>
-                <div class="drink-text">
-                    <h1 class="drink-name">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h1>
-                    <h1 class="drink-price">€99</h1>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="drink">
-                <div class="drink-img">
-                    <img src="./img/drink6.png" alt="drink1">
-                </div>
-                <div class="drink-text">
-                    <h1 class="drink-name">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h1>
-                    <h1 class="drink-price">€99</h1>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
+            <?php } ?>
+        <?php } ?>
 
         </section>
 
@@ -91,9 +47,9 @@
 
         <?php include 'footer.php' ?>
 
-        <div class="add-to-cart-overlay">
+        <!-- <div class="add-to-cart-overlay">
             <p>Product Added to Cart</p>
-        </div>
+        </div> -->
     </div>
 </body>
 

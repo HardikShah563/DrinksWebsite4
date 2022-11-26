@@ -1,3 +1,32 @@
+<?php include 'functions.php' ?>
+
+<?php
+
+if (!isset($_SESSION['u_id'])) {
+    header('Location: ./login.php');
+}
+if (isset($_POST['checkout'])) {
+    $checkout = $_POST;
+    $cart = get_cart();
+    if (!empty($cart)) {
+        $checkout['u_id'] = $_SESSION["u_id"];
+        $checkout['fname'] = $_POST["fname"];
+        $checkout['lname'] = $_POST["lname"];
+        $checkout['email'] = $_POST["email"];
+        $checkout["total"] = get_total();
+        $checkout["drinks"] = json_encode($cart, true);
+        $checkout = checkout($checkout);
+        if ($checkout) {
+            empty_cart();
+            header('Location: orderplaced.php');
+        }
+    } else {
+        header('Location: ../index.php');
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,32 +36,23 @@
 <body>
     <!-- Everything inside the file will be contained inside the box to get that effect -->
     <div class="box checkout-page all-pages">
-    <?php include 'navbar.php' ?>
+        <?php include 'navbar.php' ?>
         
         <div class="main-text">
             <h1>Checkout form</h1>
         </div>
 
         <section class="input-form">
-            <form>
+            <form action="?" method="post">
                 <h1>Personal Details</h1>
                 <div class="grouping">
-                    <input type="text" name="FirstName" id="FirstName" placeholder="First Name" required>
-                    <input type="text" name="LastName" id="LastName" placeholder="Last Name" required>
+                    <input type="text" name="fname" placeholder="First Name" required>
+                    <input type="text" name="lname" placeholder="Last Name" required>
                 </div>
-                <p>* You can login through phone number or email address</p>
-                <input type="number" name="phnumber" id="phnumber" placeholder="Phone Number">
-                <input type="email" name="email" id="email" placeholder="Email / Username">
-                <div class="grouping">
-                    <input type="password" name="password" id="password" placeholder="Create Password" required>
-                    <input type="password" name="password" id="password" placeholder="Retype Password" required>
-                </div>
-                <button>Save Changes</button>
-            </form>
-        </section>
+                <p>* This email will be used for further communication</p>
+                <input type="email" name="email" placeholder="Email">
 
-        <section class="input-form">
-            <form>
+
                 <h1>Billing & Shipping Address</h1>
                 <input type="text" placeholder="House no. / Building Name" required>
                     <input type="text" placeholder="Road Name / Area / Colony" required>
@@ -42,13 +62,9 @@
                         <input type="text" placeholder="State" required>
                     </div>
                     <input type="text" placeholder="Nearby Location (optional)">
-                    <button>Save Changes</button>
-            </form>
-        </section>
 
-        <section class="input-form">
-            <form>
-                <h1>Billing & Shipping Address</h1>
+
+                <h1>Payment Details</h1>
                 <div class="grouping">
                     <input type="text" name="card-holder" id="card-holder" placeholder="Card Holder" required>
                     <input type="date" name="date" id="date" required>
@@ -57,7 +73,7 @@
                     <input type="number" name="card-number" id="card-number" placeholder="Card Number" required>
                     <input type="number" name="CVV" id="CVV" placeholder="CVV" required>
                 </div>
-                <button>Proceed with payment</button>
+                <button type="submit" name="checkout">Submit your response</button>
             </form>
         </section>
 

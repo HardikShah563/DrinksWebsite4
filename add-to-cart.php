@@ -1,3 +1,5 @@
+<?php include 'functions.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,11 +13,66 @@
     <div class="box all-pages">
         <?php include 'navbar.php' ?>
 
+        <?php
+
+        if (isset($_POST['add-to-cart'])) {
+            $data = $_POST;
+            $id = $_POST["d_id"];
+            $quantity = 1;
+            if (add_to_cart($id, $quantity)) {
+                $response = [
+                    'type' => 'success',
+                    'message' => 'Drink is added to cart successfully!',
+                    'icon' => '<i class="fa-solid fa-circle-check"></i>',
+                ];
+            } else {
+                $response = [
+                    'type' => 'success',
+                    'message' => 'Some Error Occured, Please try again!',
+                    'icon' => '<i class="fa-solid fa-circle-xmark"></i>',
+                ];
+            }
+        } else if (isset($_POST['update-to-cart'])) {
+            $data = $_POST;
+            $id = $_POST["d_id"];
+            $quantity = $_POST['quantity'];
+            if (update_to_cart($id, $quantity)) {
+                $response = [
+                    'type' => 'success',
+                    'message' => 'Drink is added to cart successfully!',
+                    'icon' => '<i class="fa-solid fa-circle-check"></i>',
+                ];
+            } else {
+                $response = [
+                    'type' => 'success',
+                    'message' => 'Some Error Occured, Please try again!',
+                    'icon' => '<i class="fa-solid fa-circle-xmark"></i>',
+                ];
+            }
+        } else if (isset($_POST['remove-from-cart'])) {
+            $id = $_POST["d_id"];
+            if (remove_from_cart($id)) {
+                $response = [
+                'type' => 'success',
+                'message' => 'Drink is removed from cart',
+                'icon' => '<i class="fa-solid fa-circle-check"></i>',
+                ];
+            } else {
+                $response = [
+                'type' => 'error',
+                'message' => 'Some Error Occured, Please try again!',
+                'icon' => '<i class="fa-solid fa-circle-xmark"></i>',
+                ];
+            }
+        }
+
+        ?>
+
         <section class="about-us" id="about-us">
             <div class="about-text">
                 <div class="main-text-pages">
-                    <h1><i class="fa-solid fa-circle-check"></i></h1>
-                    <h6>Product Added to Cart!</h6>
+                    <h1><?= $response['icon'] ?></h1>
+                    <h6><?= $response['message'] ?></h6>
                 </div>
             </div>
             <div class="about-img">

@@ -1,3 +1,5 @@
+<?php include 'functions.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,34 +18,45 @@
             <h1>Cart</h1>
         </div>
 
-        <section class="explore-menu">
-            <div class="drink">
-                <div class="drink-img">
-                    <img src="./img/drink1.png" alt="drink1">
-                </div>
-                <div class="drink-text">
-                    <h1 class="drink-name">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h1>
-                    <h1 class="drink-price">€99</h1>
-                    <button class="add-to-cart">Remove from Cart</button>
-                </div>
-            </div>
+        <?php 
 
+        $cart = get_cart();
+        if (isset($cart)) {
+            $drinks = get_drinks_by_ids($cart);
+        }
+
+        if (mysqli_num_rows($drinks)) { ?>
+        <section class="explore-menu">
+            <?php foreach ($drinks as $drink) { ?>
             <div class="drink">
                 <div class="drink-img">
-                    <img src="./img/drink5.png" alt="drink1">
+                    <img src="<?= $drink['image'] ?>" alt="drink image" />
                 </div>
                 <div class="drink-text">
-                    <h1 class="drink-name">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h1>
-                    <h1 class="drink-price">€99</h1>
-                    <button class="add-to-cart">Remove from Cart</button>
+                    <p class="drink-name"><?= $drink['name'] ?></p>
+                    <h3 class="drink-cost" style="text-align: center;">£<?= $drink['price'] ?></h3>
+                </div>
+                <div class="add-to-basket">
+                    <form action="add-to-cart.php" method="POST">
+                        <input type="hidden" name="d_id" value="<?= $drink['d_id'] ?>">
+                        <button type="submit" name="remove-from-cart" class="add-to-cart"> Remove from Cart <i class="fa-solid fa-cart-shopping"></i></button>
+                    </form>
                 </div>
             </div>
+            <?php } ?>
+        <?php } ?>
 
         </section>
 
-        <div class="go-to-cart">
-            <a href="/drinksify/checkout.php">Checkout</a>
+        <?php if (mysqli_num_rows($drinks)) { ?>
+        <div class="checkout-section">
+            <div class="go-to-cart">
+                <a href="checkout.php">Checkout</a>
+            </div>
         </div>
+        <?php } else {?>
+            <p style="text-align: center; color: #fff; margin: 100px 0;"><-- Cart is empty, fill in with beautiful cans! --></p>
+        <?php }?>
 
         <?php include 'footer.php' ?>
 
