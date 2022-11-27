@@ -793,7 +793,7 @@ a hr {
 
 
 .user-details {
-    width: 800px;
+    width: 400px;
     margin: 100px auto;
 }
 
@@ -804,6 +804,7 @@ a hr {
 .user-buttons {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
 }
 

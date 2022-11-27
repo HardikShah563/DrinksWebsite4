@@ -130,7 +130,6 @@ function get_users()
     $stmt->execute();
     return $stmt->get_result();
 }
-
 function get_user($id)
 {
     global $db;
@@ -147,11 +146,17 @@ function edit_user($data)
     $password = md5($data['password']);
     $sql = "update users set fname = ?, lname = ?, email = ?, password = ? where u_id = ?";
     $stmt = $db->prepare($sql);
-    $stmt->bind_param('sssss', $data['fname'], $data['lname'], $data['email'], $password, $data['u_id']);
+    $stmt->bind_param('sssss', $data['fname'], $data['lname'], $data['email'], $password, $_SESSION['u_id']);
     if ($stmt->execute()) {
         return 1;
     }
     return 0;
+}
+
+function edit_user_session($data) {
+    $_SESSION["fname"] = $data["fname"];
+    $_SESSION["lname"] = $data["lname"];
+    $_SESSION["email"] = $data["email"];
 }
 
 function delete_user($id)
