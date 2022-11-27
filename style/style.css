@@ -787,3 +787,31 @@ a hr {
         width: 95%;
     }
 }
+
+
+/* ========== ========= Checkout Page CSS ======== ======== */
+
+
+.user-details {
+    width: 800px;
+    margin: 100px auto;
+}
+
+.user-details p {
+    text-align: left;
+}
+
+.user-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.user-buttons button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    width: 200px;
+    height: 40px;
+}
