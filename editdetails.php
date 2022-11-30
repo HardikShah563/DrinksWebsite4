@@ -2,28 +2,25 @@
 
 <?php
 
-if (isset($_POST['editDetails'])) {
+if (isset($_POST['edit'])) {
     $editDetails = $_POST;
-
-        $editDetails['fname'] = $_POST["fname"];
-        $editDetails['lname'] = $_POST["lname"];
-        $editDetails['email'] = $_POST["email"];
-        $editDetails['password'] = $_POST["newpassword"];
-        $edit = edit_user($editDetails);
-        
-        if(!$edit) {
-            $response = [
-                'type' => 'error',
-                'message' => 'Edit Failed'
-              ];
-        } else {
-            $response = [
-                'type' => 'success',
-                'message' => 'Successfully Edited details'
-              ];
-        }
-
+    $editDetails['uid'] = $_SESSION["uid"];
+    $editDetails['fname'] = $_POST["fname"];
+    $editDetails['lname'] = $_POST["lname"];
+    $editDetails['email'] = $_POST["email"];
+    $editDetails['password'] = $_POST["newpassword"];
     
+    if(!edit_user($editDetails)) {
+        $response = [
+            'type' => 'error',
+            'message' => 'Edit Failed'
+        ];
+    } else {
+        $response = [
+            'type' => 'success',
+            'message' => 'Successfully Edited details'
+        ];
+    }
 }
 
 ?>
@@ -49,24 +46,16 @@ if (isset($_POST['editDetails'])) {
                     <p style="color: #fff; font-size: 16px;"><?= $response['message'] ?></p>
                 </div>
             <?php } ?>
-            <form action="?" method="post">
-                <p>If you do not wish to update any particular field, type the original ones</p>
-                <h1>Personal Details</h1>
-                <div class="grouping">
-                    <input type="text" name="fname" placeholder="First Name" required>
-                    <input type="text" name="lname" placeholder="Last Name" required>
-                </div>
-                <p>* This email will be used for all the communication</p>
-                <input type="email" name="email" placeholder="Email" required>
 
-                <h1>Change Password</h1>
-                <div class="grouping">
-                    <input type="password" name="password" placeholder="Old Password" required>
-                    <input type="password" name="newpassword" placeholder="New password" required>
-                </div>
-                <button type="submit" name="editDetails">Edit Details</button>
+            <form action="?" method="post" class="checkout-form">
+                <p>Note: If you do not wish to update any particular field, type the original ones</p>
+                <input type="text" name="fname" placeholder="First Name">
+                <input type="text" name="lname" placeholder="Last Name">
+                <input type="email" name="email" placeholder="Email Address">
+                <input type="password" name="password" placeholder="Old password">
+                <input type="password" name="newpassword" placeholder="New password">
+                <button type="submit" name="edit" style="display: flex; justify-content: center; align-items: center; font-size: 18px; width: 200px; height: 40px; margin: 20px auto;">Edit Details &nbsp;<i class="fa-solid fa-pen-to-square"></i></button>
             </form>
-        </section>
 
         <?php include 'footer.php' ?>
     </div>

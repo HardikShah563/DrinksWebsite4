@@ -153,12 +153,6 @@ function edit_user($data)
     return 0;
 }
 
-function edit_user_session($data) {
-    $_SESSION["fname"] = $data["fname"];
-    $_SESSION["lname"] = $data["lname"];
-    $_SESSION["email"] = $data["email"];
-}
-
 function delete_user($id)
 {
     global $db;
